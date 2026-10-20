@@ -1,0 +1,5 @@
+{
+  "build": "python3 -m py_compile src/optimization.py",
+  "test": "pytest",
+  "smoke": "python3 -c 'import urllib.request; assert \'Autonomate\' in open(\'index.html\').read(); print(\'Smoke Test Passed: index.html verified successfully.\')'"
+}
