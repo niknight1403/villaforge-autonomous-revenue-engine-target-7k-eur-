@@ -6,7 +6,7 @@
   "scripts": {
     "build": "python3 -m py_compile src/optimization.py",
     "test": "python3 -m unittest discover tests",
-    "smoke": "python3 -c \"import urllib.request; assert 'Autonomate' in open('index.html').read(); print('Smoke Test Passed: index.html verified successfully.')\""
+    "smoke": "python3 scripts/smoke_test.py"
   },
   "dependencies": {},
   "devDependencies": {}
