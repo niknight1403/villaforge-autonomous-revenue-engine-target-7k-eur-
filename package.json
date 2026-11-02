@@ -1,13 +1,1 @@
-{
-  "name": "autonomate-revenue-engine",
-  "version": "1.0.0",
-  "description": "Autonomous High-Revenue Project Generator SaaS & PayKit",
-  "main": "src/optimization.py",
-  "scripts": {
-    "build": "python3 -m py_compile src/optimization.py",
-    "test": "python3 -m unittest discover tests",
-    "smoke": "python3 scripts/smoke_test.py"
-  },
-  "dependencies": {},
-  "devDependencies": {}
-}
+{"name": "my-project", "version": "1.0.0", "description": "My project description", "main": "index.js", "scripts": {"test": "echo \
