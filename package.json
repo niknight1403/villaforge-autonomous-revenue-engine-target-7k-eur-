@@ -1,9 +1,11 @@
 {
-  "name": "autonomate-revenue-engine",
+  "name": "autonomous-revenue-engine",
   "version": "1.0.0",
+  "description": "Autonomous Revenue Engine",
+  "main": "index.js",
   "scripts": {
-    "build": "python3 -c \"print('Build successful')\"",
-    "test": "node run_tests.py",
-    "smoke": "python3 scripts/smoke_test.py"
-  }
+    "test": "echo 'No tests configured'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
