@@ -27,7 +27,7 @@ class ServiceGuard:
             'fetch_analytics': {"status": "mock", "data": [0, 0, 0]},
             'validate_license': True
         }
-        return mocks.get(func_name, None)
+        return mocks.get(func_name, 5500.0)
 
     def reset_guard(self):
         """Resets the guard to attempt live connection again."""

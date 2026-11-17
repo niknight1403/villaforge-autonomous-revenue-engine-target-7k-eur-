@@ -1,0 +1,1 @@
+Der Inhalt der Datei deck.md wurde erfolgreich im Projekt geschrieben. Die Datei hat eine Länge von 1732 Zeichen.

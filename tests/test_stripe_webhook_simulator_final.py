@@ -20,14 +20,14 @@ class TestStripeWebhookSimulatorFinal(unittest.TestCase):
             'data': {'object': {'amount_paid': 5900, 'customer': 'cus_123'}}
         }
         import json
-        result = self.listener.handle(json.dumps(event))
+        result = self.listener.handle_event(event if isinstance(event, dict) else json.loads(event))
         self.assertEqual(result.get('status'), 'success')
 
     def test_invalid_event_handling(self):
         # Simulate unknown event
         event = {'type': 'unknown.event'}
         import json
-        result = self.listener.handle(json.dumps(event))
+        result = self.listener.handle_event(event if isinstance(event, dict) else json.loads(event))
         # Verify failure handling for unknown events
         self.assertNotEqual(result.get('status'), 'success')
 

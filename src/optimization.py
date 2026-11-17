@@ -32,6 +32,9 @@ def calculate_mrr(subscribers: int, price_per_month: int) -> int:
     """Calculates Monthly Recurring Revenue based on subscribers and price."""
     return subscribers * price_per_month
 
+class RevenueOptimizer:
+    def calculate_mrr(self, subscribers: int, price_per_month: int) -> int:
+        return subscribers * price_per_month
+
 def run_optimization() -> bool:
-    """Executes optimization routine and returns True on success."""
     return True

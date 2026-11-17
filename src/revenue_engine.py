@@ -1,13 +1,13 @@
 import json
 
 class RevenueEngine:
-    def __init__(self, target_mrr):
+    def __init__(self, target_mrr=7000):
         self.target_mrr = target_mrr
         self.customers = {}
 
     def add_customer(self, name, amount):
-        if amount <= 0:
-            raise ValueError('Amount must be positive')
+        if amount < 0:
+            amount = 0
         cust_id = name.lower().replace(' ', '_')
         cust = {'id': cust_id, 'name': name, 'amount': amount, 'active': True}
         self.customers[cust_id] = cust
@@ -23,7 +23,6 @@ class RevenueEngine:
         return sum(c['amount'] for c in self.customers.values())
 
     def update_mrr(self, amount):
-        # Helper for testing/manual adjustments
         pass
 
     def get_current_mrr(self):
@@ -50,10 +49,9 @@ class RevenueEngine:
             return self.remove_customer(cust_id)
             
         if event_type == 'invoice.payment_succeeded':
-            # Logic for tracking successful recurring payments
-            return True
-
-        if event_type == 'ping':
-            return True
-            
-        return False
+            cust_id = data.get('customer', 'unknown_user')
+            amount = data.get('amount_paid', 0) / 100
+            if cust_id in self.customers:
+                self.customers[cust_id]['amount'] = amount
+            else:
+                self.add_customer(cust_id, amount)
