@@ -1,4 +1,4 @@
-def calculate_mrr(users, price):
+def calculate_mrr(users: int, price: float) -> float:
     if users < 0 or price < 0:
-        raise ValueError('Users and price must be non-negative')
-    return users * price
+        raise ValueError('Inputs must be non-negative')
+    return float(users * price)
