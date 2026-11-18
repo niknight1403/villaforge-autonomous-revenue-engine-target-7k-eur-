@@ -1,3 +1,5 @@
-const express = require('express');
-const app = express();
-app.get('/', (req, res) => res.send('Autonomous Revenue Engine'));');
+function main() {
+    console.log('Hello, World!');
+}
+
+main();

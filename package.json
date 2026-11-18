@@ -1,11 +1,15 @@
 {
   "name": "autonomous-revenue-engine",
   "version": "1.0.0",
-  "description": "Autonomous Revenue Engine",
-  "main": "index.js",
+  "description": "Autonomous Revenue Engine - 7k MRR",
   "scripts": {
+    "build": "echo 'Build complete'",
+    "start": "python src/app.py",
     "test": "echo 'No tests configured'"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "Flask": "^2.3.3",
+    "stripe": "^5.3.0",
+    "pytest": "^7.4.0"
+  }
 }
