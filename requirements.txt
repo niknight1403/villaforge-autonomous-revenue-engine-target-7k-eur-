@@ -1,6 +1,5 @@
 flask
+stripe
 pytest
 requests
-stripe
 python-dotenv
-Flask-Limiter

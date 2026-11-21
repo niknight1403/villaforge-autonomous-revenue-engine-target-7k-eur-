@@ -1,0 +1,1 @@
+Die CI/CD-Pipeline wurde erweitert, um ein “pre-test” Skript, das vor dem Q-Gate die Existenz der Python-Umgebung prüft. Der Build bricht nun bei fehlendem Python mit einer aussagekrÿtigen Fehlermeldung ab.

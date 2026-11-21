@@ -1,0 +1,3 @@
+#!/bin/sh
+# Pre-commit hook to ensure scripts have execution permissions
+git diff --cached --name-only --diff-filter=AM | grep '^scripts/' | xargs -r chmod +x

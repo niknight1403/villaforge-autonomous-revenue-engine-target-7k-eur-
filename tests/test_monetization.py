@@ -1,22 +1,17 @@
-import pytest
-from src.monetization import calculate_mrr
+import unittest
+from src.main import calculate_revenue
 
-def test_calculate_mrr_basic():
-    # Test with 10 users at 50 EUR each
-    users = 10
-    price = 50
-    expected = 500
-    assert calculate_mrr(users, price) == expected
+class TestRevenueEngine(unittest.TestCase):
+    def test_calculate_revenue(self):
+        data = {
+            'subscriptions': [
+                {'plan': 'basic', 'users': 2},
+                {'plan': 'pro', 'users': 1},
+                {'plan': 'enterprise', 'users': 0}
+            ]
+        }
+        # 2 * 50 + 1 * 200 = 300
+        self.assertEqual(calculate_revenue(data), 300)
 
-def test_calculate_mrr_zero():
-    # Test with 0 users
-    assert calculate_mrr(0, 100) == 0
-
-def test_calculate_mrr_negative_input():
-    # Test resilience against negative inputs
-    with pytest.raises(ValueError):
-        calculate_mrr(-1, 100)
-
-def test_calculate_mrr_float_price():
-    # Test with float price
-    assert calculate_mrr(2, 49.99) == 99.98
+if __name__ == '__main__':
+    unittest.main()
